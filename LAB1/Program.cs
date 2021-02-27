@@ -92,7 +92,11 @@ namespace Task_1
                     if ((i + 1 == exp.Length) && (exp.Length != OutputLength(ref output)) && (operations.Count() != 0))
                     {
                         AddElString(ref output, number);
-                        AddElString(ref output, operations.Pop());
+                        while(operations.Count() != 0)
+                        {
+                            AddElString(ref output, operations.Pop());
+                        }
+                        
                     }
                 }
                 else
@@ -172,7 +176,6 @@ namespace Task_1
             string exp;
             char[] symbols = new char[] {'(', ')', '+', '-', '/', '^', '.', '0', '1',
                                          '2', '3', '4' , '5' ,  '6' , '7', '8', '9'};
-            int prior = 0;
             string[] output = new string[0];
             Console.WriteLine("Введите арифметическое выражение ");
             exp = Console.ReadLine();
