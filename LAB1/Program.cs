@@ -59,6 +59,20 @@ namespace Task_1
         static bool CheckString(ref string exp, char[] symbols)
         {
             bool concidence = false;
+            if (exp.Length == 0)
+            {
+                Console.WriteLine("Ошибка. Символы не были введены");
+                while (concidence == false)
+                {
+                    Console.WriteLine("Повторите ввод");
+                    exp = Console.ReadLine();
+                    if (exp.Length != 0)
+                    {
+                        concidence = true;          
+                    }
+                }
+                concidence = false;
+            }
             for (int i = 0; i < exp.Length; i++)
             {
                 for (int j = 0; j < symbols.Length; j++)
