@@ -12,14 +12,6 @@ namespace Task_1
         {
             Array.Resize(ref output, output.Length + 1);
             output[output.Length - 1] = value;
-
-        }
-
-        static void AddElString(ref string[] output, char value)
-        {
-            Array.Resize(ref output, output.Length + 1);
-            output[output.Length - 1] = value.ToString();
-
         }
 
         static int Prior(string symbol)
@@ -56,23 +48,22 @@ namespace Task_1
             return length;
         }
 
-        static bool CheckString(ref string exp, char[] symbols)
+        static bool CheckStringEmpt(ref string exp)
         {
             bool concidence = false;
             if (exp.Length == 0)
             {
                 Console.WriteLine("Ошибка. Символы не были введены");
-                while (concidence == false)
-                {
-                    Console.WriteLine("Повторите ввод");
-                    exp = Console.ReadLine();
-                    if (exp.Length != 0)
-                    {
-                        concidence = true;          
-                    }
-                }
-                concidence = false;
+            } else if (exp.Length != 0)
+            {
+                concidence = true;
             }
+            return concidence;
+        }
+
+        static bool CheckStringSymb(ref string exp, char[] symbols)
+        {
+            bool concidence = false;
             for (int i = 0; i < exp.Length; i++)
             {
                 for (int j = 0; j < symbols.Length; j++)
@@ -90,12 +81,26 @@ namespace Task_1
                     }
                 }
             }
+            return concidence;
+        }
+         
+        static bool CheckString(ref string exp, char[] symbols)
+        {
+            bool concidenceEmpt = CheckStringEmpt(ref exp);
+            bool concidenceSymb = CheckStringSymb(ref exp, symbols);
+            while ((concidenceEmpt != true) || (concidenceSymb != true))
+            {
+                Console.WriteLine("Повторите ввод");
+                exp = Console.ReadLine();
+                concidenceEmpt = CheckStringEmpt(ref exp);
+                concidenceSymb = CheckStringSymb(ref exp, symbols);
+            }
             return true;
         }
 
         static void GenPolStr(ref string[] output, string exp, ref Stack<string> operations)
         {
-            int prior = 0, priorOp = 0;
+            int prior, priorOp;
             string number = "";
             for (int i = 0; i < exp.Length; i++)
             {
@@ -106,11 +111,11 @@ namespace Task_1
                     if ((i + 1 == exp.Length) && (exp.Length != OutputLength(ref output)) && (operations.Count() != 0))
                     {
                         AddElString(ref output, number);
-                        while(operations.Count() != 0)
+                        while (operations.Count() != 0)
                         {
                             AddElString(ref output, operations.Pop());
                         }
-                        
+
                     }
                 }
                 else
@@ -144,7 +149,7 @@ namespace Task_1
         static bool CountPolStr(ref string[] output, Stack<double> count)
         {
             bool error = false;
-            int prior = 0;
+            int prior;
             for (int i = 0; i < output.Length; i++)
             {
                 prior = Prior(output[i]);
