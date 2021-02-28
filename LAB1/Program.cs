@@ -48,6 +48,71 @@ namespace Task_1
             return length;
         }
 
+        static bool CheckStringOp(ref string exp, char[] symbolsOp, ref int opCount)
+        {
+            bool concidence = false;
+            for (int i = 0; i < exp.Length; i++)
+            {
+                for (int j = 0; j < symbolsOp.Length; j++)
+                {
+                    if (exp[i] == symbolsOp[j])
+                    {
+                        opCount++;
+                    }
+                }
+            }
+            if (opCount == 0)
+            {
+                Console.WriteLine("Ошибка нет символов операций");
+            } else
+            {
+                concidence = true;
+            }
+            return concidence;
+        }
+
+        static bool CheckStringNum(ref string exp, char[] symbolsNum, char[] symbolsOp,ref int numCount)
+        {
+            bool concidence = false;
+            bool isOperation = true;
+            for (int i = 0; i < exp.Length; i++)
+            {
+                for (int j = 0; j < symbolsNum.Length; j++)
+                {
+                    if (exp[i] == symbolsNum[j])
+                    {
+                        numCount++;
+                        while (isOperation)
+                        {
+                            if (i + 1 >= exp.Length)
+                            {
+                                break;
+                            }
+                            i++;
+                           
+                            for (int z = 0; z < symbolsOp.Length; z++)
+                            {
+                                if (exp[i] == symbolsOp[z])
+                                {
+                                    isOperation = false;
+                                    break;
+                                }
+                            }
+                        }
+                        isOperation = true;
+                    }
+                }
+            }
+            if (numCount == 0)
+            {
+                Console.WriteLine("Ошибка нет цифр");
+            } else
+            {
+                concidence = true;
+            }
+            return concidence;
+        }
+
         static bool CheckStringEmpt(ref string exp)
         {
             bool concidence = false;
@@ -74,27 +139,51 @@ namespace Task_1
                     }
                     else if ((concidence == false) && (j + 1 == symbols.Length))
                     {
-                        Console.WriteLine("Ошибка. Недопустимые символы! Повторите ввод");
-                        Console.WriteLine("Введите арифметическое выражение ");
-                        exp = Console.ReadLine();
-                        concidence = CheckString(ref exp, symbols);
+                        Console.WriteLine("Ошибка. Недопустимые символы!");
+                        return concidence;
                     }
                 }
             }
             return concidence;
         }
-         
-        static bool CheckString(ref string exp, char[] symbols)
+
+        static bool CheckCount (ref int opCount, ref int numCount)
         {
-            bool concidenceEmpt = CheckStringEmpt(ref exp);
-            bool concidenceSymb = CheckStringSymb(ref exp, symbols);
-            while ((concidenceEmpt != true) || (concidenceSymb != true))
+            bool conformity = false;
+            if (numCount - opCount == 1)
             {
-                Console.WriteLine("Повторите ввод");
-                exp = Console.ReadLine();
-                concidenceEmpt = CheckStringEmpt(ref exp);
-                concidenceSymb = CheckStringSymb(ref exp, symbols);
+                conformity = true;
+            } else
+            {
+                Console.WriteLine("Ошибка! Количество цифр не соответсвует количеству операций.");
+                conformity = false;
             }
+            numCount = 0;
+            opCount = 0;
+            return conformity;
+        }
+         
+        static bool CheckString(ref string exp, char[] symbols, char[] symbolsOp, char[] symbolsNum)
+        {
+            int opCount = 0, numCount = 0;
+            bool coincidenceEmpt = CheckStringEmpt(ref exp);
+            bool coincidenceSymb = CheckStringSymb(ref exp, symbols);
+            bool coincidenceOp = CheckStringOp(ref exp, symbolsOp, ref opCount);
+            bool coincidenceNum = CheckStringNum(ref exp, symbolsNum, symbolsOp, ref numCount);
+            bool countCheck = CheckCount(ref opCount, ref numCount);
+            {
+                while ((coincidenceEmpt != true) || (coincidenceSymb != true) ||
+                   (coincidenceOp != true) || (coincidenceNum != true) || (countCheck != true))
+                {
+                    Console.WriteLine("Повторите ввод");
+                    exp = Console.ReadLine();
+                    coincidenceEmpt = CheckStringEmpt(ref exp);
+                    coincidenceSymb = CheckStringSymb(ref exp, symbols);
+                    coincidenceOp = CheckStringOp(ref exp, symbolsOp, ref opCount);
+                    coincidenceNum = CheckStringNum(ref exp, symbolsNum, symbolsOp, ref numCount);
+                    countCheck = CheckCount(ref opCount, ref numCount);
+                }
+            } 
             return true;
         }
 
@@ -194,11 +283,14 @@ namespace Task_1
             Stack<double> count = new Stack<double>();
             string exp;
             char[] symbols = new char[] {'(', ')', '+', '-', '/', '^', '.', '0', '1',
-                                         '2', '3', '4' , '5' ,  '6' , '7', '8', '9'};
+                                         '2', '3', '4', '5',  '6', '7', '8', '9'};
+            char[] symbolsOp = new char[] {'+', '-', '/', '^'};
+            char[] symbolsNum = new char[] {'0', '1','2', '3', '4', '5', '6', 
+                                            '7', '8', '9'};
             string[] output = new string[0];
             Console.WriteLine("Введите арифметическое выражение ");
             exp = Console.ReadLine();
-            CheckString(ref exp, symbols);
+            CheckString(ref exp, symbols, symbolsOp, symbolsNum);
             Console.WriteLine("Исходное выражение: " + exp);
 
             GenPolStr(ref output, exp, ref operations);
