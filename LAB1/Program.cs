@@ -63,7 +63,7 @@ namespace Task_1
             }
             if (opCount == 0)
             {
-                Console.WriteLine("Ошибка нет символов операций");
+                Console.WriteLine("Ошибка! Нет символов операций.");
             } else
             {
                 concidence = true;
@@ -105,7 +105,7 @@ namespace Task_1
             }
             if (numCount == 0)
             {
-                Console.WriteLine("Ошибка нет цифр");
+                Console.WriteLine("Ошибка! Нет цифр.");
             } else
             {
                 concidence = true;
@@ -118,7 +118,7 @@ namespace Task_1
             bool concidence = false;
             if (exp.Length == 0)
             {
-                Console.WriteLine("Ошибка. Символы не были введены");
+                Console.WriteLine("Ошибка! Символы не были введены.");
             } else if (exp.Length != 0)
             {
                 concidence = true;
@@ -139,7 +139,7 @@ namespace Task_1
                     }
                     else if ((concidence == false) && (j + 1 == symbols.Length))
                     {
-                        Console.WriteLine("Ошибка. Недопустимые символы!");
+                        Console.WriteLine("Ошибка! Недопустимые символы!");
                         return concidence;
                     }
                 }
@@ -149,7 +149,7 @@ namespace Task_1
 
         static bool CheckCount (ref int opCount, ref int numCount)
         {
-            bool conformity = false;
+            bool conformity;
             if (numCount - opCount == 1)
             {
                 conformity = true;
