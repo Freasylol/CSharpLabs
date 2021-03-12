@@ -282,7 +282,7 @@ namespace Task_1
             Stack<string> operations = new Stack<string>();
             Stack<double> count = new Stack<double>();
             string exp;
-            char[] symbols = new char[] {'(', ')', '+', '-', '/', '^', '.', '0', '1',
+            char[] symbols = new char[] {'+', '-', '/', '^', '.', '0', '1',
                                          '2', '3', '4', '5',  '6', '7', '8', '9'};
             char[] symbolsOp = new char[] {'+', '-', '/', '^'};
             char[] symbolsNum = new char[] {'0', '1','2', '3', '4', '5', '6', 
