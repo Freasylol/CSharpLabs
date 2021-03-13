@@ -1,0 +1,14 @@
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\bin\Debug\Task 2.exe.config
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\bin\Debug\Task 2.exe
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\bin\Debug\Task 2.pdb
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\obj\Debug\Task 2.csprojAssemblyReference.cache
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\obj\Debug\Task 2.csproj.CoreCompileInputs.cache
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\obj\Debug\Task 2.exe
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\obj\Debug\Task 2.pdb
+D:\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\obj\Debug\Task 2.csprojAssemblyReference.cache
+D:\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\obj\Debug\Task 2.csproj.CoreCompileInputs.cache
+D:\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\obj\Debug\Task 2.exe
+D:\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\obj\Debug\Task 2.pdb
+D:\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\bin\Debug\Task 2.exe.config
+D:\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\bin\Debug\Task 2.exe
+D:\LABS 2 sem\Labs ISP\LAB 2\Task 2\Task 2\bin\Debug\Task 2.pdb

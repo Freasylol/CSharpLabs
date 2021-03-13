@@ -1,0 +1,7 @@
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 1\Task 1\bin\Debug\Task 1.exe.config
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 1\Task 1\bin\Debug\Task 1.exe
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 1\Task 1\bin\Debug\Task 1.pdb
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 1\Task 1\obj\Debug\Task 1.csprojAssemblyReference.cache
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 1\Task 1\obj\Debug\Task 1.csproj.CoreCompileInputs.cache
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 1\Task 1\obj\Debug\Task 1.exe
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 2\Task 1\Task 1\obj\Debug\Task 1.pdb
