@@ -1,0 +1,6 @@
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 4\LAB 4\Keylogger\obj\Debug\Keylogger.csproj.CoreCompileInputs.cache
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 4\LAB 4\Keylogger\bin\Debug\Keylogger.dll
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 4\LAB 4\Keylogger\bin\Debug\Keylogger.pdb
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 4\LAB 4\Keylogger\obj\Debug\Keylogger.dll
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 4\LAB 4\Keylogger\obj\Debug\Keylogger.pdb
+F:\BSUIR\LABS 2 sem\Labs ISP\LAB 4\LAB 4\Keylogger\obj\Debug\Keylogger.csprojAssemblyReference.cache
