@@ -1,0 +1,7 @@
+F:\BSUIR\LABS 2 sem\LabsISP\LAB6\bin\Debug\LAB6.exe.config
+F:\BSUIR\LABS 2 sem\LabsISP\LAB6\bin\Debug\LAB6.exe
+F:\BSUIR\LABS 2 sem\LabsISP\LAB6\bin\Debug\LAB6.pdb
+F:\BSUIR\LABS 2 sem\LabsISP\LAB6\obj\Debug\LAB6.csprojAssemblyReference.cache
+F:\BSUIR\LABS 2 sem\LabsISP\LAB6\obj\Debug\LAB6.csproj.CoreCompileInputs.cache
+F:\BSUIR\LABS 2 sem\LabsISP\LAB6\obj\Debug\LAB6.exe
+F:\BSUIR\LABS 2 sem\LabsISP\LAB6\obj\Debug\LAB6.pdb
