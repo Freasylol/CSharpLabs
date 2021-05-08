@@ -260,7 +260,7 @@ namespace LAB7
                     break;
                 case 3:
                     FractionInput(ref fraction2);
-                    Console.WriteLine("Произведение равно:");
+                    Console.WriteLine("Произведение равно: ");
                     FractionMult(fraction, fraction2, formatChoice);
                     break;
                 case 4:
