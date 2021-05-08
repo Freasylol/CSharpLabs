@@ -265,7 +265,7 @@ namespace LAB7
                     break;
                 case 4:
                     FractionInput(ref fraction2);
-                    Console.WriteLine("Частное равно:");
+                    Console.WriteLine("Частное равно: ");
                     FractionDiv(fraction, fraction2, formatChoice);
                     break;
                 case 5:
