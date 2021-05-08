@@ -255,7 +255,7 @@ namespace LAB7
                     break;
                 case 2:
                     FractionInput(ref fraction2);
-                    Console.WriteLine("Разность равна:");
+                    Console.WriteLine("Разность равна: ");
                     FractionDiff(fraction, fraction2, formatChoice);
                     break;
                 case 3:
