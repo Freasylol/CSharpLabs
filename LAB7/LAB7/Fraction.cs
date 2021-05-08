@@ -13,6 +13,21 @@ class Fraction
         this.denomerator = denomerator;
     }
 
+    public static explicit operator double(Fraction fraction)
+    {
+        double doubleFraction = (double)fraction.numerator / (double)fraction.denomerator;
+        return doubleFraction;
+    }
+
+    public static explicit operator int(Fraction fraction)
+    {
+        double doubleFraction = (double)fraction.numerator / (double)fraction.denomerator;
+        Console.WriteLine(doubleFraction);
+        int intFraction = (int)Math.Round(doubleFraction, MidpointRounding.AwayFromZero);
+        return intFraction;
+    }
+
+
     public double ToDouble()
     {
         double doubleFraction = (double)numerator / (double)denomerator;
@@ -41,10 +56,10 @@ class Fraction
     }
 
     public string ToSpecialString()
-    {   
+    {
         string hyphenString = "";
         string numeratorStarString = "";
-        string denomeratorStarString = "";  
+        string denomeratorStarString = "";
         for (int i = 0; i < numerator; i++)
         {
             numeratorStarString += "*";
@@ -60,7 +75,7 @@ class Fraction
         {
             hyphenString += "-";
         }
-        return numeratorStarString + "\n" + hyphenString + "\n" + denomeratorStarString  + "\n";
+        return numeratorStarString + "\n" + hyphenString + "\n" + denomeratorStarString + "\n";
     }
 
     public static Fraction operator +(Fraction firstArg, Fraction secondArg)
@@ -113,6 +128,8 @@ class Fraction
 
     public static bool operator >(Fraction firstArg, Fraction secondArg)
     {
+        Reduction(ref firstArg);
+        Reduction(ref secondArg);
         FractionComparer comparer = new FractionComparer();
         int result = comparer.Compare(firstArg, secondArg);
         if (result == 1)
@@ -127,6 +144,8 @@ class Fraction
 
     public static bool operator <(Fraction firstArg, Fraction secondArg)
     {
+        Reduction(ref firstArg);
+        Reduction(ref secondArg);
         FractionComparer comparer = new FractionComparer();
         int result = comparer.Compare(firstArg, secondArg);
         if (result == -1)
@@ -140,6 +159,8 @@ class Fraction
     }
     public static bool operator ==(Fraction firstArg, Fraction secondArg)
     {
+        Reduction(ref firstArg);
+        Reduction(ref secondArg);
         FractionComparer comparer = new FractionComparer();
         int result = comparer.Compare(firstArg, secondArg);
         if (result == 0)
@@ -154,6 +175,8 @@ class Fraction
 
     public static bool operator !=(Fraction firstArg, Fraction secondArg)
     {
+        Reduction(ref firstArg);
+        Reduction(ref secondArg);
         FractionComparer comparer = new FractionComparer();
         int result = comparer.Compare(firstArg, secondArg);
         if (result != 0)
@@ -177,7 +200,8 @@ class Fraction
                 int temp = numerator;
                 numerator = denomerator;
                 denomerator = temp % denomerator;
-            } else
+            }
+            else
             {
                 return denomerator;
             }

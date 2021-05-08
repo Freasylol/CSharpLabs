@@ -36,11 +36,11 @@ namespace LAB7
                 if (isRightLength)
                 {
                     Console.WriteLine("Вы ввели строку неверной длины");
-                }       
+                }
             }
-            
+
             while ((isEmpty != false) || (isWrongSymb != false) || (isRightLength != false) ||
-                  (isWrongArgs != false)) 
+                  (isWrongArgs != false))
             {
                 Console.WriteLine("Повторите ввод");
                 str = Console.ReadLine();
@@ -65,8 +65,8 @@ namespace LAB7
             string firstArg = str.Substring(0, index);
             bool isFirstArgWrong = CheckWrongSymbInt(firstArg);
             string secondArg = str.Substring(index + 1);
-            bool isSecondArgWrong = CheckNotNullOrNegative(str, isEmpty);
-            if ((isFirstArgWrong != false) || isSecondArgWrong != false)
+            bool isSecondArgWrong = CheckNotNullOrNegative(secondArg, isEmpty);
+            if ((isFirstArgWrong != false) || (isSecondArgWrong != false))
             {
                 Console.WriteLine("Были введены неверные аргументы");
                 isWrongArgs = true;
@@ -93,7 +93,7 @@ namespace LAB7
             else
             {
                 return new Fraction(int.Parse(str), 1);
-            }    
+            }
         }
 
         static void FractionSum(Fraction firstArg, Fraction secondArg, int variantOfInput)
@@ -101,11 +101,12 @@ namespace LAB7
             if (variantOfInput == 1)
             {
                 Console.WriteLine(firstArg + secondArg);
-            } else
+            }
+            else
             {
                 Console.WriteLine((firstArg + secondArg).ToSpecialString());
             }
-            
+
         }
 
         static void FractionDiff(Fraction firstArg, Fraction secondArg, int variantOfInput)
@@ -168,7 +169,7 @@ namespace LAB7
             {
                 if (str[0] == '-' || str[0] == '0')
                 {
-                    Console.WriteLine("Ошибка!Было введено отрицательное число или ноль");
+                    Console.WriteLine("Ошибка! Было введено отрицательное число или ноль");
                     isNegative = true;
                 }
             }
@@ -244,8 +245,8 @@ namespace LAB7
             Fraction fraction = new Fraction();
             FractionInput(ref fraction);
             Fraction fraction2 = new Fraction();
-           
-            switch (operationChoice) 
+
+            switch (operationChoice)
             {
                 case 1:
                     FractionInput(ref fraction2);
@@ -272,19 +273,21 @@ namespace LAB7
                     if (fraction == fraction2)
                     {
                         Console.WriteLine("Дроби равны");
-                    } else if (fraction > fraction2)
+                    }
+                    else if (fraction > fraction2)
                     {
                         Console.WriteLine("Первая дробь больше, чем вторая");
-                    } else
+                    }
+                    else
                     {
                         Console.WriteLine("Вторая дробь больше, чем первая");
                     }
                     break;
                 case 6:
-                    Console.WriteLine((fraction.ToDouble()).ToString());
+                    Console.WriteLine(((double)fraction).ToString());
                     break;
                 case 7:
-                    Console.WriteLine((fraction.ToInt()).ToString());
+                    Console.WriteLine(((int)fraction).ToString());
                     break;
                 default:
                     break;
